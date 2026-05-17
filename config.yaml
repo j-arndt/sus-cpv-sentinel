@@ -1,0 +1,46 @@
+system:
+  name: "SUS CPV Sentinel"
+  version: "1.0"
+  gamp5_category: 4
+  document_number: "VAL-SUS-SENT-001"
+
+integrity_test:
+  usl_mbar: 3.5
+  lsl_mbar: 0.5
+  min_lots_cpk: 25
+  cpk_oos_threshold: 1.33
+  cpk_marginal_threshold: 1.67
+  d2_constant: 1.128  # Moving range unbiasing constant for n=2
+
+shewhart:
+  nelson_rule1: true  # 1 point beyond ±3σ
+  nelson_rule2: true  # 9 consecutive points same side of centreline
+  d4_constant: 3.267  # MR UCL constant for n=2
+
+hotelling:
+  alpha: 0.0027       # Equivalent to ±3σ for univariate
+  min_observations: 30
+  variables:
+    - delta_p_mbar
+    - test_temp_c
+    - lot_age_days
+
+scorecard:
+  weights:
+    rejection_rate: 0.30
+    scn_impact: 0.30
+    coa_completeness: 0.20
+    integrity_fail_rate: 0.20
+  scn_alert_threshold: 3  # Rolling 12-month cumulative impact score
+
+audit_trail:
+  path: "audit/audit_trail.jsonl"
+  sqlite_index: "audit/audit_index.db"
+
+regulatory_citations:
+  cpk: "ASTM E3244-23 §4.2 / FDA Process Validation 2011 Stage 3"
+  shewhart: "PDA TR 66 §8.2 / ASTM E3051-25 §7"
+  hotelling: "FDA Process Validation 2011 Stage 3 / ICH Q9(R1)"
+  scorecard: "ASTM E3051-25 §6 / PDA TR 66 §9"
+  usp665: "USP <665> (effective 1 May 2026) / USP <1665>"
+  alcoa: "MHRA GxP Data Integrity Guidance 2018 / 21 CFR Part 11 §11.10(e)"
