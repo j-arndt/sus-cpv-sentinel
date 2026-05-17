@@ -2,13 +2,13 @@
 title: SUS CPV Sentinel
 emoji: ⚗️
 colorFrom: blue
-colorTo: cyan
+colorTo: indigo
 sdk: streamlit
 sdk_version: "1.35.0"
 app_file: app.py
 pinned: true
 license: apache-2.0
-short_description: Stage 3 CPV for Single-Use Systems | GAMP 5 Cat 4 | 21 CFR Part 11
+short_description: Stage 3 CPV for SUS | GAMP 5 Cat 4 | 21 CFR Part 11
 ---
 
 # SUS CPV Sentinel
