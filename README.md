@@ -171,4 +171,4 @@ Tamper detection: loading a modified audit trail raises `AuditIntegrityError` an
 
 MSAT · GxP Data Engineering · Single-Use Systems · 21 CFR Part 11 · GAMP 5
 
-[GitHub](https://github.com/j-arndt) · [LinkedIn](https://linkedin.com/in/justinarndt)
+[GitHub](https://github.com/j-arndt) · [LinkedIn](https://www.linkedin.com/in/qualityai/)
